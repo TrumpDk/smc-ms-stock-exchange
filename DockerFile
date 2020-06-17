@@ -1,0 +1,5 @@
+FROM openjdk:8-jdk-alpine
+VOLUME /stock-exchange-service
+ADD /target/smc-ms-stock-exchange-1.0.0-SNAPSHOT.jar se-svc.jar
+EXPOSE 8002
+ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-jar", "se-svc.jar"]
